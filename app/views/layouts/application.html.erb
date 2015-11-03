@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Goochme.com</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="container">
+      <%= link_to "Goochme", "", class: 'btn btn-lg btn-success', id: "logo" %>
+      <div class="nav_item">
+        <%= link_to "Link 1", "", class: 'btn btn-lg btn-success' %>
+      </div>
+      <div class="nav_item">
+        <%= link_to "Link 2", "", class: 'btn btn-lg btn-success' %>
+      </div>
+      <div class="nav_item">
+        <%= link_to "Link 3", "", class: 'btn btn-lg btn-success' %>
+      </div>
+    </div>
+  </header>
+
+<%= yield %>
+
+<div class="footer">
+  <p>&copy; Goochme.com 2015</p>
+</div>
+  
+</body>
+</html>
