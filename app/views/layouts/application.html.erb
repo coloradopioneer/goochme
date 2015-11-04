@@ -7,26 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="container">
-      <%= link_to "Goochme", "", class: 'btn btn-lg btn-success', id: "logo" %>
-      <div class="nav_item">
-        <%= link_to "Link 1", "", class: 'btn btn-lg btn-success' %>
-      </div>
-      <div class="nav_item">
-        <%= link_to "Link 2", "", class: 'btn btn-lg btn-success' %>
-      </div>
-      <div class="nav_item">
-        <%= link_to "Link 3", "", class: 'btn btn-lg btn-success' %>
-      </div>
-    </div>
-  </header>
+
+<% if @nav_true %>
+  <%= render 'layouts/nav' %>
+<% end %>
 
 <%= yield %>
-
+<% if @footer_true %>
 <div class="footer">
   <p>&copy; Goochme.com 2015</p>
 </div>
+<% end %>
 
 </body>
 </html>
