@@ -3,7 +3,6 @@ class PagesController < ApplicationController
   end
 
   def login
-
   	@nav_true = false
   	@footer_true = false
   end
