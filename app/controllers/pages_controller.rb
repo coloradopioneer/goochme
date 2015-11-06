@@ -6,4 +6,8 @@ class PagesController < ApplicationController
   	@nav_true = false
   	@footer_true = false
   end
+
+  def about
+
+  end
 end
