@@ -7,17 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if @nav_true %>
+    <%= render 'layouts/nav' %>
+  <% end %>
 
-<% if @nav_true %>
-  <%= render 'layouts/nav' %>
-<% end %>
+  <%= yield %>
 
-<%= yield %>
-<% if @footer_true %>
-<div class="footer">
-  <p>&copy; Goochme.com 2015</p>
-</div>
-<% end %>
-
+  <% if @footer_true %>
+    <div class="footer">
+      <p>&copy; Goochme.com 2015</p>
+    </div>
+  <% end %>
 </body>
 </html>
