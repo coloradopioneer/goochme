@@ -25,19 +25,22 @@ $navbar-inverse-color: $light-orange;
 
 body {
   padding-top: 80px;
-  background-image: image-url("js.png");
+  background-color: #7f7f7f;
+  /*background-image: image-url("js.png");
   background-size: cover;
+  */
 }
 
 .modal-content-login {
   background-color: none;
-  margin-top: 324px;
+  margin-top: 325px;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   outline: 0 none;
   position: relative;
+  min-height: 215px;
 }
 
 .nav_item {
