@@ -1,0 +1,17 @@
+<p><%= link_to "Create new game", new_game_path %></p>
+<table>
+	<tr>
+		<th>Type Of Game</th>
+		<th>Number</th>
+	</tr>
+
+	<% @games.each do |game| %>
+	<tr>
+		<td><%= game.type_of_game %></td>
+		<td><%= game.number %></td>
+		<td><%= link_to 'Edit', edit_game_path(game) %></td>
+		<td><%= link_to 'Show', game_path(game) %></td>
+	</tr>
+	<% end %>
+
+</table>
