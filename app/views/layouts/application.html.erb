@@ -8,15 +8,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% flash.each do |name, msg| %>
-    <ul>
-      <li><%= msg %></li>
-    </ul>
-  <% end %>
   <% if @nav_true %>
     <%= render 'layouts/nav' %>
   <% end %>
-
+  <%= render 'layouts/messages' %>
   <%= yield %>
 
   <% if @footer_true %>
