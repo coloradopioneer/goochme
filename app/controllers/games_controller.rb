@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+	before_action :set_game, only: [:edit, :update, :show, :destroy]
 
 	def index
 		@games = Game.all
@@ -9,11 +10,10 @@ class GamesController < ApplicationController
 	end
 
 	def edit
-		@game = Game.find(params[:id])
+
 	end
 
 	def update
-		@game = Game.find(params[:id])
 		if @game.update(game_params)
 			flash[:notice] = "Game was successfully updated."
 			redirect_to game_path(@game)
@@ -33,11 +33,10 @@ class GamesController < ApplicationController
 	end
 
 	def show
-		@game = Game.find(params[:id])
+
 	end
 
 	def destroy
-		@game = Game.find(params[:id])
 		@game.destroy
 		flash[:notice] = "Game was successfully deleted."
 		redirect_to games_path
@@ -46,6 +45,10 @@ class GamesController < ApplicationController
 	private
 		def game_params
 			params.require(:game).permit(:type_of_game, :number)
+		end
+
+		def set_game
+			@game = Game.find(params[:id])
 		end
 
 end
