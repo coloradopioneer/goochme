@@ -11,11 +11,16 @@ $navbar-inverse-color: $light-orange;
   margin-bottom: 10px;
   float: left;
   margin-right: 10px;
-  font-size: 2em;
+  font-size: 1.1em;
   color: #fff;
-  letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
+}
+
+#login {
+  float: right !important;
+  margin-left: 25px;
+  margin-top: 13px;
+  display: inline;
 }
 
 #logo#hover {
@@ -46,7 +51,7 @@ body {
 .nav_item {
   margin-left: 25px;
   float: left;
-  margin-top: 20px;
+  margin-top: 13px;
   display: inline;
 }
 
