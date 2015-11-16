@@ -1,14 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Goochme", "", class: 'btn btn-danger btn-sm', id: "logo" %>
+    <%= link_to "Goochme", root_path, class: 'btn btn-danger btn-sm', id: "logo" %>
     <div class="nav_item">
-        <%= link_to "Home", home_path, class: 'btn btn-primary btn-sm' %>
+      <%= link_to "Games", games_path, class: 'btn btn-primary btn-sm' %>
     </div>
     <div class="nav_item">
       <%= link_to "About", about_path, class: 'btn btn-primary btn-sm' %>
-    </div>
-    <div class="nav_item">
-      <%= link_to "Games", games_path, class: 'btn btn-primary btn-sm' %>
     </div>
     <div id="login">
       <%= link_to "Login", login_path, class: 'btn btn-primary btn-sm' %>

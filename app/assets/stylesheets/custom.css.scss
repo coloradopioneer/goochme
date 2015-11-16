@@ -30,7 +30,7 @@ $navbar-inverse-color: $light-orange;
 
 body {
   padding-top: 80px;
-  background-color: #7f7f7f;
+  background-color: #2d2d2d;
   /*background-image: image-url("js.png");
   background-size: cover;
   */
@@ -78,6 +78,14 @@ h2 {
   color: #777;
 }
 
+h3 {
+  color: #000;
+}
+
+th, tr {
+  color: #000;
+}
+
 .left {
   text-align: left;
   letter-spacing: .5px;
@@ -86,4 +94,15 @@ h2 {
 .footer {
   margin-top: 25px;
   border-top: 1px solid #000;
+  color: #000;
+}
+
+.footer p {
+  margin-top: 10px;
+}
+
+.jumbotron {
+  // background-image: asset-url("js.png");
+  // background-size: cover;
+  background-color: #000;
 }
