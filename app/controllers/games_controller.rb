@@ -15,7 +15,7 @@ class GamesController < ApplicationController
 
 	def update
 		if @game.update(game_params)
-			flash[:notice] = "Game was successfully updated."
+			flash[:success] = "Game was successfully updated."
 			redirect_to game_path(@game)
 		else
 			render 'edit'
@@ -25,7 +25,7 @@ class GamesController < ApplicationController
 	def create
 		@game = Game.new(game_params)
 		if @game.save
-			flash[:notice] = "The game was created, you're welcome..."
+			flash[:success] = "The game was created, you're welcome..."
 			redirect_to game_path(@game)
 		else
 			render 'new'
@@ -38,7 +38,7 @@ class GamesController < ApplicationController
 
 	def destroy
 		@game.destroy
-		flash[:notice] = "Game was successfully deleted."
+		flash[:danger] = "Game was successfully deleted."
 		redirect_to games_path
 	end
 

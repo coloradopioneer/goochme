@@ -1,23 +1,28 @@
-<% if @game.errors.any? %>
-	<h2>The following errors prevented the game from being created.</h2>
-	<ul>
-		<%= @game.errors.full_messages.each do |msg| %>
-		<li><%= msg %></li>
-	</ul>
+<%= render 'shared/errors', obj: @game %>
+<div class="row">
+	<div class="col-xs-12">
+		<%= form_for(@game, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+			<div class="form-group">
+				<div class="control-label col-sm-2">
+					<%= f.label :type_of_game %>
+				</div>
+				<div class="col-sm-6">
+					<%= f.text_field :type_of_game, class: "form-control", placeholder: "Game Type", autofocus: true %>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="control-label col-sm-2">
+					<%= f.label :number %>
+				</div>
+				<div class="col-sm-6">
+					<%= f.text_field :number, class: "form-control", placeholder: "Game Number" %>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class='col-sm-offset-2 col-sm-6'>
+					<%= f.submit class: "btn-btn-primary btn-sm" %>
+				</div>
+			</div>
 		<% end %>
-<% end %>
-
-<%= form_for @game do |f| %>
-	<p>
-		<%= f.label :type_of_game %>
-		<%= f.text_field :type_of_game %>
-	</p>
-	<p>
-		<%= f.label :number %>
-		<%= f.text_field :number %>
-	</p>
-	<p>
-		<%= f.submit %>
-	</p>
-
-<% end %>
+	</div>
+</div>
