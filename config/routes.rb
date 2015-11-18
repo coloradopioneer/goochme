@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   get '/login', to: 'pages#login'
 
   resources :games
+
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end
