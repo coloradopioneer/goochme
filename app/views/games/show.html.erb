@@ -1,5 +1,21 @@
 <h2>Game: <%= @game.type_of_game %></h2>
 <div class="well show-game col-xs-8 col-xs-offset-2">
+	<% if @game.user %>
+	<ul class="listing">
+		<div class="row center">
+			<div class="col-md-4 col-md-offest-4">
+				<li>Created by:</li>
+				<li><%= link_to gravatar_for(@game.user), user_path(@game.user) %></li>
+				<li class="game-type">
+					<%= link_to @game.user.username, user_path(@game.user) %>
+				</li>
+				<li><small>
+					<%= pluralize(@game.user.games.count, "game") if @game.user.games %>
+				</small></li>
+			</div>
+		</div>
+	</ul>
+	<% end %>
 	<h4 class="center"><strong>Game Number: </strong><%= @game.number %></h4>
 		<div class="game-actions center">
 			<%= link_to "View all games", games_path, class: "btn btn-xs btn-success" %>

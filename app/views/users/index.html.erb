@@ -1,0 +1,18 @@
+<h1>All Gooch Players</h1>
+<div class="container">
+	<div class="center">
+		<% @users.each do |user| %>
+			<ul class="listing">
+				<div class="row">
+					<div class="well col-md-4 col-md-offest-4">
+						<li><%= link_to gravatar_for(user), user_path(user) %></li>
+						<li class="game-type">
+							<%= link_to user.username, user_path(user) %>
+						</li>
+						<li><small><%= pluralize(user.games.count, "game") if user.games %></small></li>
+					</div>
+				</div>
+			</ul>
+		<% end %>
+	</div>
+</div>
