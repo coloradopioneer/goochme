@@ -2,7 +2,7 @@ class GamesController < ApplicationController
 	before_action :set_game, only: [:edit, :update, :show, :destroy]
 
 	def index
-		@games = Game.all
+		@games = Game.paginate(page: params[:page], per_page: 7)
 	end
 
 	def new
