@@ -7,6 +7,9 @@
     <div class="nav_item">
       <%= link_to "About", about_path, class: 'btn btn-primary btn-sm' %>
     </div>
+    <div id="logout">
+      <%= link_to "Logout", logout_path, method: :delete, class: 'btn btn-primary btn-sm' %>
+    </div>
     <div id="login">
       <%= link_to "Login", login_path, class: 'btn btn-primary btn-sm' %>
     </div>
