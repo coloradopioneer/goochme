@@ -1,5 +1,7 @@
 class GamesController < ApplicationController
 	before_action :set_game, only: [:edit, :update, :show, :destroy]
+	before_action :require_user, except: [:index, :show]
+	before_action :reguire_same_user, only: [:edit, :update, :destroy]
 
 	def index
 		@games = Game.paginate(page: params[:page], per_page: 7)
@@ -49,6 +51,13 @@ class GamesController < ApplicationController
 
 		def set_game
 			@game = Game.find(params[:id])
+		end
+
+		def require_same_user
+			if current_user != @game.user
+				flash[:danger] = "You can only edit or delete your own article"
+				redirect_to root_path
+			end
 		end
 
 end
