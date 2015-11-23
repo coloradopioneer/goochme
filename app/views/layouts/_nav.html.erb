@@ -4,20 +4,31 @@
     <div class="nav_item">
       <%= link_to "Games", games_path, class: 'btn btn-primary btn-sm' %>
     </div>
+    <% if logged_in? %>
+      <div class="nav_item">
+        <%= link_to "New Game", new_game_path, class: 'btn btn-primary btn-sm' %>
+      </div>
+    <% end %>
+    <div class="nav_item">
+      <%= link_to "Users", users_path, class: 'btn btn-primary btn-sm' %>
+    </div>
     <div class="nav_item">
       <%= link_to "About", about_path, class: 'btn btn-primary btn-sm' %>
     </div>
     <% if logged_in? %>
-    <div id="logout">
-      <%= link_to "Logout", logout_path, method: :delete, class: 'btn btn-primary btn-sm' %>
-    </div>
+      <div id="profile">
+        <%= link_to "Profile", edit_user_path(current_user), class: 'btn btn-primary btn-sm' %>
+      </div>
+      <div id="logout">
+        <%= link_to "Logout", logout_path, method: :delete, class: 'btn btn-primary btn-sm' %>
+      </div>
     <% else %>
-    <div id="login">
-      <%= link_to "Login", login_path, class: 'btn btn-primary btn-sm' %>
-    </div>
-    <div id="signup">
-      <%= link_to "Sign Up", signup_path, class: 'btn btn-primary btn-sm' %>
-    </div>
+      <div id="login">
+        <%= link_to "Login", login_path, class: 'btn btn-primary btn-sm' %>
+      </div>
+      <div id="signup">
+        <%= link_to "Sign Up", signup_path, class: 'btn btn-primary btn-sm' %>
+      </div>
     <% end %>
   </div>
 </header>
