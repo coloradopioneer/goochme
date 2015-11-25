@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 	before_action :set_game, only: [:edit, :update, :show, :destroy]
-	before_action :require_user, except: [:index, :show]
+	before_action :require_user?, except: [:index, :show]
 	before_action :reguire_same_user, only: [:edit, :update, :destroy]
 
 	def index
@@ -26,6 +26,7 @@ class GamesController < ApplicationController
 
 	def create
 		@game = Game.new(game_params)
+		@game.user = current_user
 		if @game.save
 			flash[:success] = "The game was created, you're welcome..."
 			redirect_to game_path(@game)
