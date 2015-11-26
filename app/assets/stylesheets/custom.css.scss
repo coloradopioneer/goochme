@@ -96,7 +96,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
-  color: #000;
+  color: #0099ff;
 }
 
 h2 {
@@ -116,11 +116,19 @@ th, tr {
 }
 
 p {
-  color: #000;
+  color: #0099ff;
 }
 
 label {
-  color: #000;
+  color: #0099ff;
+}
+
+small {
+  color: #0099ff;
+}
+
+hr {
+  color: #0099ff;
 }
 
 .left {
@@ -130,7 +138,7 @@ label {
 
 .footer {
   margin-top: 25px;
-  border-top: 1px solid #000;
+  border-top: 1px solid #0099ff;
   color: #000;
 }
 
@@ -145,12 +153,12 @@ label {
 }
 
 .game-meta-details {
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #0099ff;
   margin-top: 15px;
 }
 
 .game-actions {
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #0099ff;
   padding-top: 5px;
 }
 
@@ -164,14 +172,15 @@ label {
 }
 
 .game-body {
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid #0099ff;
   padding-top: 15px;
   padding-bottom: 15px;
-  color: #fff;
+  color: #0099ff;
 }
 
 .well {
   background-color: #000;
+  border-color: #0099ff;
 }
 
 .listing {
