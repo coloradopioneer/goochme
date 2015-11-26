@@ -1,39 +1,33 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "Goochme", root_path, class: 'btn btn-danger btn-sm', id: "logo" %>
-    <div class="nav_item">
-      <%= link_to "Games", games_path, class: 'btn btn-primary btn-sm' %>
-    </div>
-    <% if logged_in? %>
-      <div class="nav_item">
-        <%= link_to "New Game", new_game_path, class: 'btn btn-primary btn-sm' %>
-      </div>
-    <% end %>
-    <div class="nav_item">
-      <%= link_to "Users", users_path, class: 'btn btn-primary btn-sm' %>
-    </div>
-    <div class="nav_item">
-      <%= link_to "About", about_path, class: 'btn btn-primary btn-sm' %>
-    </div>
-    <% if logged_in? %>
-      <div id="profile">
-        <%= link_to "Profile", edit_user_path(current_user), class: 'btn btn-primary btn-sm' %>
-      </div>
-      <div id="logout">
-        <%= link_to "Logout", logout_path, method: :delete, class: 'btn btn-primary btn-sm' %>
-      </div>
-    <% else %>
-      <div id="login">
-        <%= link_to "Login", login_path, class: 'btn btn-primary btn-sm' %>
-      </div>
-      <div id="signup">
-        <%= link_to "Sign Up", signup_path, class: 'btn btn-primary btn-sm' %>
-      </div>
-    <% end %>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-mobile" aria-expanded="false">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Goochme", root_path, class: 'btn btn-danger btn-sm', id: "logo" %>
       <% if logged_in? and current_user.admin? %>
-        <div id="admin">
-          <%= link_to "admin", "", class: 'btn btn-danger btn-sm' %>
-        </div>
+        <%= link_to "admin", "", class: 'btn btn-danger btn-sm', id: "admin" %>
       <% end %>
+    </div>
+    <div class="navbar-collpase collapse" id="navbar-collapse-mobile">
+      <ul class="nav navbar-nav navbar-right">
+        <% if logged_in? %>
+          <%= link_to "New Game", new_game_path, class: 'btn btn-primary btn-sm' %>
+        <% end %>
+        <%= link_to "Games", games_path, class: 'btn btn-primary btn-sm' %>
+        <%= link_to "Users", users_path, class: 'btn btn-primary btn-sm' %>
+        <%= link_to "About", about_path, class: 'btn btn-primary btn-sm' %>
+        <% if logged_in? %>
+          <%= link_to "Profile", edit_user_path(current_user), class: 'btn btn-primary btn-sm' %>
+          <%= link_to "Logout", logout_path, method: :delete, class: 'btn btn-primary btn-sm' %>
+        <% else %>
+          <%= link_to "Login", login_path, class: 'btn btn-primary btn-sm' %>
+          <%= link_to "Sign Up", signup_path, class: 'btn btn-primary btn-sm' %>
+        <% end %>
+      </ul>
+    </div>
   </div>
-</header>
+</nav>
