@@ -10,19 +10,21 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <% if @nav_true %>
-      <%= render 'layouts/nav' %>
-    <% end %>
-
     <div class="container">
-    <%= render 'layouts/messages' %>
-    </div>
-    <%= yield %>
+      <% if @nav_true %>
+        <%= render 'layouts/nav' %>
+      <% end %>
 
-    <% if @footer_true %>
-      <div class="footer center">
-        <p>&copy; Goochme.com 2015</p>
+      <div class="container">
+      <%= render 'layouts/messages' %>
       </div>
-    <% end %>
+      <%= yield %>
+
+      <% if @footer_true %>
+        <div class="footer center">
+          <p>&copy; Goochme.com 2015</p>
+        </div>
+      <% end %>
+    </div>
   </body>
 </html>
