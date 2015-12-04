@@ -1,32 +1,39 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-mobile" aria-expanded="false">
-        <span class="sr-only">Toggle Navigation</span>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Goochme", root_path, class: 'btn btn-danger btn-sm', id: "logo" %>
-      <% if logged_in? and current_user.admin? %>
-        <%= link_to "admin", "", class: 'btn btn-danger btn-sm', id: "admin" %>
-      <% end %>
+      <%= link_to "Goochme", root_path, class: 'navbar-brand', id: "logo" %>
     </div>
-    <div class="navbar-collpase collapse" id="navbar-collapse-mobile">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <% if logged_in? %>
+          <li><%= link_to "New Game", new_game_path, class: 'navbar-links' %></li>
+        <% end %>
+        <li class="dropdown navbar-links">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "Games", games_path %></li>
+            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Rules", rules_path %></li>
+          </ul>
+        </li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <%= link_to "New Game", new_game_path, class: 'btn btn-primary btn-sm' %>
-        <% end %>
-        <%= link_to "Games", games_path, class: 'btn btn-primary btn-sm' %>
-        <%= link_to "Users", users_path, class: 'btn btn-primary btn-sm' %>
-        <%= link_to "About", about_path, class: 'btn btn-primary btn-sm' %>
-        <%= link_to "Rules", rules_path, class: 'btn btn-primary btn-sm' %>
-        <% if logged_in? %>
-          <%= link_to "Profile", edit_user_path(current_user), class: 'btn btn-primary btn-sm' %>
-          <%= link_to "Logout", logout_path, method: :delete, class: 'btn btn-primary btn-sm' %>
+          <li><%= link_to "Profile", edit_user_path(current_user), class: 'navbar-links' %></li>
+          <li><%= link_to "Logout", logout_path, method: :delete, class: 'navbar-links' %></li>
         <% else %>
-          <%= link_to "Login", login_path, class: 'btn btn-primary btn-sm' %>
-          <%= link_to "Sign Up", signup_path, class: 'btn btn-primary btn-sm' %>
+          <li><%= link_to "Login", login_path, class: 'navbar-links' %></li>
+          <li><%= link_to "Sign Up", signup_path, class: 'navbar-links' %></li>
+        <% end %>
+        <% if logged_in? and current_user.admin? %>
+          <li><%= link_to "admin", "", id: "admin" %><li>
         <% end %>
       </ul>
     </div>

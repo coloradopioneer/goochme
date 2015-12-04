@@ -3,18 +3,18 @@
 	<div class="col-xs-12">
 		<%= form_for(@game, :html => {class: "form-horizontal", role: "form"}) do |f| %>
 			<div class="form-group">
-				<div class="control-label col-sm-2">
+				<div class="control-label col-sm-offset-2 col-sm-2">
 					<%= f.label :type_of_game %>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<%= f.text_field :type_of_game, class: "form-control", placeholder: "Game Type", autofocus: true %>
 				</div>
 			</div>
 			<div class="form-group">
-				<div class="control-label col-sm-2">
+				<div class="control-label col-sm-offset-2 col-sm-2">
 					<%= f.label :number %>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-4">
 					<%= f.text_field :number, class: "form-control", placeholder: "Game Number" %>
 				</div>
 			</div>
@@ -29,7 +29,7 @@
 			<ul>Player 1 Misdeals</ul>
 			<ul>Player 2 Misdeals</ul>
 			<div class="form-group">
-				<div class='col-sm-offset-2 col-sm-6'>
+				<div class='col-sm-offset-3 col-sm-6'>
 					<%= f.submit class: "btn btn-primary btn-sm" %>
 				</div>
 			</div>

@@ -1,14 +1,13 @@
-<h1>Welcome to <%= @user.username %>'s page</h1>
+<h1><%= @user.username.capitalize %></h1>
 <div class="row">
-	<div class="col-md-4 col-md-offest-4 center">
+	<div class="col-xs-offset-4 well col-xs-4 center">
 		<%= gravatar_for @user %>
 	</div>
 </div>
-<h4><%= @user.username %>'s games</h4>
-	<div class="center">
-		<%= will_paginate @user_games %>
-	</div>
+<div class="col-xs-offset-4 col-xs-4 center">
+	<%= will_paginate @user_games %>
+</div>
 <%= render 'games/game', obj: @user_games %>
-	<div class="center">
-		<%= will_paginate @user_games %>
-	</div>
+<div class="col-xs-offset-4 col-xs-4 center">
+	<%= will_paginate @user_games %>
+</div>
