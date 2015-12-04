@@ -18,18 +18,72 @@
 					<%= f.text_field :number, class: "form-control", placeholder: "Game Number" %>
 				</div>
 			</div>
-			<ul>Player 1</ul>
-			<ul>Player 2</ul>
-			<ul>Player 1 Skunk</ul>
-			<ul>Player 2 Skunk</ul>
-			<ul>Player 1 Perfect Hand</ul>
-			<ul>Player 2 Perfect Hand</ul>
-			<ul>Player 1 Muggins Points</ul>
-			<ul>Player 2 Muggins Points</ul>
-			<ul>Player 1 Misdeals</ul>
-			<ul>Player 2 Misdeals</ul>
+
 			<div class="form-group">
-				<div class='col-sm-offset-3 col-sm-6'>
+				<div class="control-label col-sm-offset-2 col-sm-2">
+					<%= f.label :Player1_id, "Player 1" %>
+				</div>
+				<div class="col-sm-4">
+					<%= f.text_field :Player1_id, class: "form-control", placeholder: "Player 1" %>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="control-label col-sm-offset-2 col-sm-2">
+					<%= f.label :Player2_id, "Player 2" %>
+				</div>
+				<div class="col-sm-4">
+					<%= f.text_field :Player2_id, class: "form-control", placeholder: "Player 2" %>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="control-label col-sm-offset-2 col-sm-2">
+					<%= f.label :winner %>
+				</div>
+				<div class="col-sm-4">
+					<%= f.text_field :winner, class: "form-control", placeholder: "Winner" %>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="control-label col-sm-offset-2 col-sm-2">
+					<%= f.label :skunk %>
+				</div>
+				<div class="col-sm-4">
+					<%= f.text_field :skunk, class: "form-control", placeholder: "Skunk?" %>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="control-label col-sm-offset-2 col-sm-2">
+					<%= f.label :perfect_hand %>
+				</div>
+				<div class="col-sm-4">
+					<%= f.text_field :perfect_hand, class: "form-control", placeholder: "Perfect Hand" %>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="control-label col-sm-offset-2 col-sm-2">
+					<%= f.label :muggins_points %>
+				</div>
+				<div class="col-sm-4">
+					<%= f.text_field :muggins_points, class: "form-control", placeholder: "Muggins Points" %>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="control-label col-sm-offset-2 col-sm-2">
+					<%= f.label :misdeals %>
+				</div>
+				<div class="col-sm-4">
+					<%= f.text_field :misdeals, class: "form-control", placeholder: "Misdeals" %>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class='col-sm-offset-4 col-sm-6'>
 					<%= f.submit class: "btn btn-primary btn-sm" %>
 				</div>
 			</div>

@@ -1,8 +1,8 @@
-<h2>Game: <%= @game.type_of_game %></h2>
 <div class="well show-game col-xs-12">
 	<% if @game.user %>
 	<ul class="listing">
 		<div class="row center">
+			<h2><%= @game.type_of_game %></h2>
 			<div class="col-md-4 col-md-offest-4">
 				<li>Created by:</li>
 				<li><%= link_to gravatar_for(@game.user), user_path(@game.user) %></li>
@@ -13,6 +13,17 @@
 					<%= pluralize(@game.user.games.count, "game") if @game.user.games %>
 				</small></li>
 			</div>
+
+			<div class="col-md-4">
+				<li>Player 1: <%= @game.Player1_id %></li>
+				<li>Player 2: <%= @game.Player2_id %></li>
+				<li>Winner: <%= @game.winner %></li>
+				<li>Skunk?: <%= @game.skunk %></li>
+				<li><%= pluralize(@game.perfect_hand, "Perfect Hand") %></li>
+				<li>Muggins Points: <%= @game.muggins_points %></li>
+				<li>Misdeals: <%= @game.misdeals %></li>
+			</div>
+
 		</div>
 	</ul>
 	<% end %>

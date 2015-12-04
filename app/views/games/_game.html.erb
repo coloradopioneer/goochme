@@ -3,10 +3,32 @@
 		<div class="col-lg-offset-2 col-lg-8 col-xs-12">
 			<div class="well well-lg">
 				<div class="game-title">
-					<%= link_to game.type_of_game, game_path(game) %>
+					<%= link_to game.type_of_game, game_path(game) %> - Game #<%= game.number %> - Winner: <%= game.winner %>
 				</div>
 				<div class="game-body">
-					<%= game.number %>
+					<div class="row">
+						<div class="col-md-4">
+							Player 1: <%= game.Player1_id %>
+						</div>
+						<div class="col-md-4">
+							Skunk?: <%= game.skunk %>
+						</div>
+						<div class="col-md-4">
+							Muggins Points: <%= game.muggins_points %>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							Player 2: <%= game.Player2_id %>
+						</div>
+						<div class="col-md-4">
+							<%= pluralize(game.perfect_hand, "Perfect Hand") %>
+						</div>
+						<div class="col-md-4">
+							Misdeals: <%= game.misdeals %>
+						</div>
+					</div>
+
 					<div class="game-meta-details">
 						<small>
 							Created by: <%= game.user.username if game.user %>,

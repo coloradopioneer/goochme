@@ -47,7 +47,7 @@ class GamesController < ApplicationController
 
 	private
 		def game_params
-			params.require(:game).permit(:type_of_game, :number)
+			params.require(:game).permit(:type_of_game, :number, :Player1_id, :Player2_id, :winner, :skunk, :perfect_hand, :muggins_points, :misdeals)
 		end
 
 		def set_game
