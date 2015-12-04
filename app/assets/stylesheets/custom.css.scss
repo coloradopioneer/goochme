@@ -209,3 +209,37 @@ ul {
 .page-header {
   margin: 0px 0px 20px;
 }
+
+.pagination>li.active>a {
+  background: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.pagination > li > a {
+  background: #000;
+  border-color: #000;
+}
+
+.pagination > li > a:hover {
+  border-color: transparent;
+  background-color: #337AB7;
+  color: #fff;
+}
+
+.pagination > li:first-child > a {
+  background-color: #000;
+  border-color: transparent;
+}
+
+.pagination > li:first-child > a:hover {
+  background-color: #337AB7;
+  border-color: transparent;
+  color: #fff;
+}
+
+.pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+  background-color: #000;
+  border-color: transparent;
+  color: #337AB7;
+}
