@@ -7,7 +7,6 @@ $navbar-inverse-color: $light-orange;
 
 
 #logo {
-  margin-top: 10px;
   margin-bottom: 10px;
   float: left;
   margin-right: 10px;
@@ -46,15 +45,27 @@ $navbar-inverse-color: $light-orange;
 
 #admin {
   float: right;
-  margin-top: 10px;
   display: inline;
   font-weight: bold;
   margin-right: 10px;
   font-size: 1.1em;
 }
 
+.navbar-inverse {
+  height: 11px;
+}
+
 .navbar-links {
-  margin-top: 10px;
+  margin-top: 0px;
+}
+
+.navbar-nav > li > .dropdown-menu {
+  background-color: #000;
+  color: #fff;
+}
+
+.dropdown-menu > li > a:hover {
+  background-color: #0099ff;
 }
 
 #logo#hover {
