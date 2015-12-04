@@ -7,7 +7,6 @@ $navbar-inverse-color: $light-orange;
 
 
 #logo {
-  margin-bottom: 10px;
   float: left;
   margin-right: 10px;
   font-size: 1.1em;
@@ -49,19 +48,27 @@ $navbar-inverse-color: $light-orange;
   font-weight: bold;
   margin-right: 10px;
   font-size: 1.1em;
+  margin-top: 10px;
 }
 
 .navbar-inverse {
-  height: 11px;
+}
+
+.navbar-inverse .navbar-collapse {
+  background-color: #000;
 }
 
 .navbar-links {
-  margin-top: 0px;
+  margin-top: 10px;
 }
 
 .navbar-nav > li > .dropdown-menu {
   background-color: #000;
   color: #fff;
+}
+
+.navbar-toggle {
+  margin-top: 7px;
 }
 
 .dropdown-menu > li > a:hover {

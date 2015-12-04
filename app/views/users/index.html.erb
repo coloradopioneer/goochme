@@ -2,7 +2,7 @@
 	<% @users.each do |user| %>
 		<ul class="listing center">
 			<div class="row">
-				<div class="well col-xs-offset-4 col-xs-4">
+				<div class="well col-xs-offset-2 col-xs-8">
 					<li><%= link_to gravatar_for(user), user_path(user) %></li>
 					<li class="game-type">
 						<%= link_to user.username, user_path(user) %>
