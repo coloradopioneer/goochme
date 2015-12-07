@@ -204,6 +204,7 @@ ul {
 
 .game-title {
   font-size: 2.5em;
+  color: #0099ff;
 }
 
 .game-winner {
@@ -264,3 +265,37 @@ ul {
   border-color: transparent;
   color: #337AB7;
 }
+
+// Mobile and Tablet CSS
+
+@media(max-width: 500px) {
+  .game-body-mobile {
+  border-top: 1px solid #0099ff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #0099ff;
+  }
+
+  li {
+    margin-bottom: 0px;
+    list-style-type: none;
+  }
+
+  .game-body {
+  display: none;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+}
+
+@media(min-width:768px){
+  .game-body-mobile {
+  display: none;
+  }
+}
+
+
+@media(min-width:992px){}
+@media(min-width:1200px){}

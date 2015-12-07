@@ -36,6 +36,28 @@
 						</small>
 					</div>
 				</div>
+
+				<div class="game-body-mobile">
+					<div class="row">
+						<div class="col-xs-12 center">
+							<h3>Player 1: <%= game.Player1_id %></h3>
+							<h3>Vs</h3>
+							<h3>Player 2: <%= game.Player2_id %></h3>
+							<li>Skunk?: <%= game.skunk %></li>
+							<li>Muggins Points: <%= game.muggins_points %></li>
+							<li><%= pluralize(game.perfect_hand, "Perfect Hand") %></li>
+							<li>Misdeals: <%= game.misdeals %></li>
+						</div>
+					</div>
+
+					<div class="game-meta-details">
+						<small>
+							Created by: <%= game.user.username if game.user %>,
+							<%= time_ago_in_words(game.created_at) %> ago,
+							last updated: <%= time_ago_in_words(game.updated_at) %> ago
+						</small>
+					</div>
+				</div>
 				<% if logged_in? && (current_user == game.user || current_user.admin?) %>
 					<%= link_to "Edit this game", edit_game_path(game), class: "btn btn-xs btn-primary" %>
 					<%= link_to "Delete Game", game_path(game), method: :delete, data: {confirm: "Are you sure you want to delete this game?"}, class: "btn btn-xs btn-danger" %>
